@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import User from "./User";
 
 const Home = () => {
   return (
     <div>
-      <h1>This is the homepage</h1>
+      <h1>Welcome to </h1>
       <div className="nav">
         <NavLink
           className="link"
@@ -26,7 +26,6 @@ const Home = () => {
           <p>Home</p>
         </NavLink>
       </div>
-
       <User />
     </div>
   );
