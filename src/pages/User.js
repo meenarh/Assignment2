@@ -17,19 +17,21 @@ function UserProfile() {
   }, []);
 
   return details.map((values) => {
-    return(
-      <div className="card" key={values.id}>  
-          <img
-            src={values.picture?.medium}
-            alt="UserImage"
-          />
-        <div className="info">
-          <p>
-            Username: {values.name?.title}. {values.name?.first}
-          </p>
-          <p>Email : {values.email}</p>
-          <p>Address: {values.location?.city}</p>
-          <p>Phone: {values.phone}</p>
+    return (
+      <div className="body">
+        <div className="card" key={values.id}>
+          <div className="card-img">
+            <img src={values.picture?.medium} alt="ProfileImage" />
+          </div>
+
+          <div className="info">
+            <p>
+              Username: {values.name?.title}. {values.name?.first}
+            </p>
+            <p>Email : {values.email}</p>
+            <p>Address: {values.location?.city}</p>
+            <p>Phone: {values.phone}</p>
+          </div>
         </div>
       </div>
     );
