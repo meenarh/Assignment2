@@ -1,14 +1,23 @@
 import React from "react";
 import Navbar from "./Navbar";
-import User from "./User";
+import home from "../assets/images/image-home.png";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <Navbar />
-      <h1>Welcome to Profiles</h1>
+        <div className="info-home">
+        <h3>Altschool-circle-7 Team</h3>
+        <p>
+          We are a proactive team of developers who love creating brand and
+          digital experirnce that matters
+        </p>
+        <div className="home-img">
+        <img src={home} alt="home" />
+      </div>
+      </div>
       
-      <User />
+      
     </div>
   );
 };
