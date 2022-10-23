@@ -1,47 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { getPageNumber } from "../utils/getPageNumber";
 import { User } from "../components/User";
 import { UsersFooter } from "../components/UsersFooter";
+import { useSearchParams } from "react-router-dom";
 
 function UsersProfile({ users }) {
   return users.map((user) => {
-    return <User user={user} />;
+    return <User key={user.email} user={user} />;
   });
 }
 
 const Users = () => {
-  const [details, setDetails] = useState([]);
+  const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const pageNumber = getPageNumber(window.location.href)
+  const [params] = useSearchParams();
+  const pageNumber = useMemo(() => getPageNumber(params), [params]);
 
-  const getData = async () => {
+  const getData = async (page) => {
     setIsLoading(true);
-    const { data } = await axios.get(`https://randomuser.me/api/?results=30&page=${pageNumber}`);
+    const { data } = await axios.get(`https://randomuser.me/api/?results=30&page=${page}`);
 
     const details = data.results;
-    if (pageNumber > 1 || details.length > 0) {
-      setDetails((prev) => [...prev, ...details]);
+    if (page > 1 || details.length > 0) {
+      setUsers((prev) => [...prev, ...details]);
     } else {
-      setDetails(details);
+      setUsers(details);
     }
     setIsLoading(false);
   };
 
-
   useEffect(() => {
-    if (!details.length && pageNumber !== 1) {
+    if (!users.length && pageNumber !== 1) {
       // go to users page if no data
       window.location.href = "/users";
     }
   
-    getData();
-  }, []);
+    if (users.length / 30 < pageNumber) {
+      getData(pageNumber);
+    }
+  }, [pageNumber]);
 
   const getCurrentPageData = (pageNumber) => {
     const startIndex = (pageNumber - 1) * 30;
     const endIndex = startIndex + 30;
-    return details.slice(startIndex, endIndex);
+    return users.slice(startIndex, endIndex);
   };
 
   const currentPageUsers = getCurrentPageData(pageNumber);
