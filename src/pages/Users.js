@@ -19,7 +19,7 @@ const Users = () => {
 
   const getData = async (page) => {
     setIsLoading(true);
-    const { data } = await axios.get(`https://randomuser.me/api/?results=30&page=${page}`);
+    const { data } = await axios.get(`https://randomuser.me/api/?results=9&page=${page}`);
 
     const details = data.results;
     if (page > 1 || details.length > 0) {
@@ -36,14 +36,14 @@ const Users = () => {
       window.location.href = "/users";
     }
   
-    if (users.length / 30 < pageNumber) {
+    if (users.length /9 < pageNumber) {
       getData(pageNumber);
     }
   }, [pageNumber, users.length]);
 
   const getCurrentPageData = (pageNumber) => {
-    const startIndex = (pageNumber - 1) * 30;
-    const endIndex = startIndex + 30;
+    const startIndex = (pageNumber - 1) * 9;
+    const endIndex = startIndex + 9;
     return users.slice(startIndex, endIndex);
   };
 
@@ -55,7 +55,7 @@ const Users = () => {
   }
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading">Please wait, your request is being processed....</div>;
   }
 
   return (

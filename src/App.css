@@ -136,6 +136,16 @@
   border-radius: 50%;
 }
 
+.loading{
+  text-align: center;
+  padding: 25%;
+  margin: auto;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Product Sans";
+}
+
+
 /* Error Page */
 
 .error-page {
