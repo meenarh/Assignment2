@@ -39,7 +39,7 @@ const Users = () => {
     if (users.length / 30 < pageNumber) {
       getData(pageNumber);
     }
-  }, [pageNumber]);
+  });
 
   const getCurrentPageData = (pageNumber) => {
     const startIndex = (pageNumber - 1) * 30;
