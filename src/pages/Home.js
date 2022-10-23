@@ -10,7 +10,7 @@ const Home = () => {
         <h3>Altschool-circle-7 Team</h3>
         <p>
           We are a proactive team of developers who love creating brand and
-          digital experirnce that matters
+          digital experience that matters
         </p>
         <div className="home-img">
         <img src={home} alt="home" />
