@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import Home from './pages/Home';
 import About from './pages/About';
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from './components/ErrorPage';
 import Users from './pages/Users';
 
 function App() {

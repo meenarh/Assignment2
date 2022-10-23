@@ -1,11 +1,8 @@
-import { getQueryParam } from "./getQueryParam";
-
-export const getPageNumber = (url) => {
-    const query = getQueryParam(url);
-    let pageNumber = query.page;
+export const getPageNumber = (query) => {
+    let pageNumber;
 
     try {
-      pageNumber = parseInt(query.page) || 1;
+      pageNumber = parseInt(query.get('page')) || 1;
     } catch (error) {
       pageNumber = 1;
     }

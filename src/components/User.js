@@ -10,7 +10,7 @@ export const User = ({ user }) => {
                 alt="ProfileImage"
               />
             </div>
-  
+
             <div className="info">
               <p id="username">
                 {user.name?.first}. {user.name?.last}
