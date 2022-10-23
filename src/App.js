@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
-import User from './pages/User';
+import Users from './pages/Users';
 
 function App() {
   return (    
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/about' element={<About />} />
-        <Route path='/user' element={<User />}></Route>
+        <Route exact path='/users' element={<Users />}></Route>
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </Router>
