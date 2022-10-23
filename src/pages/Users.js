@@ -30,7 +30,6 @@ const Users = () => {
 
 
   useEffect(() => {
-    const pageNumber = getPageNumber;
     if (!details.length && pageNumber !== 1) {
       // go to users page if no data
       window.location.href = "/users";

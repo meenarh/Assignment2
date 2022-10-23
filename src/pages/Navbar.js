@@ -30,7 +30,7 @@ const Navbar = () => {
           style={({ isActive }) => ({
             color: isActive ? "#301F77" : "",
           })}
-          to="/user"
+          to="/users"
         >
           Users
         </NavLink>
