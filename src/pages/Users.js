@@ -12,7 +12,7 @@ function UsersProfile({ users }) {
 }
 
 const Users = () => {
-  const [details, setDetails] = useState([]);
+  const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [params] = useSearchParams();
   const pageNumber = useMemo(() => getPageNumber(params), [params]);
@@ -23,20 +23,20 @@ const Users = () => {
 
     const details = data.results;
     if (page > 1 || details.length > 0) {
-      setDetails((prev) => [...prev, ...details]);
+      setUsers((prev) => [...prev, ...details]);
     } else {
-      setDetails(details);
+      setUsers(details);
     }
     setIsLoading(false);
   };
 
   useEffect(() => {
-    if (!details.length && pageNumber !== 1) {
+    if (!users.length && pageNumber !== 1) {
       // go to users page if no data
       window.location.href = "/users";
     }
   
-    if (details.length / 30 < pageNumber) {
+    if (users.length / 30 < pageNumber) {
       getData(pageNumber);
     }
   }, [pageNumber]);
@@ -44,7 +44,7 @@ const Users = () => {
   const getCurrentPageData = (pageNumber) => {
     const startIndex = (pageNumber - 1) * 30;
     const endIndex = startIndex + 30;
-    return details.slice(startIndex, endIndex);
+    return users.slice(startIndex, endIndex);
   };
 
   const currentPageUsers = getCurrentPageData(pageNumber);
