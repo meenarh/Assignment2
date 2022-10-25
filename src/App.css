@@ -1,26 +1,365 @@
+@import url("http://fonts.cdnfonts.com/css/inter");
+@import url("http://fonts.cdnfonts.com/css/product-sans");
+@import url('http://fonts.cdnfonts.com/css/google-sans');
+
+
 *{
-  margin: 15px;
-  padding: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  width: 100%;
 }
 
-.nav{
+
+/* Home page */
+.home {
   display: flex;
+  margin: auto;
+  /* border:1px solid red; */
+  width: 100%;
+  height: 100vh;
+}
+.nav {
+  display: flex;
+  background: #899bc5;
+  width:20%;
+  max-width: 250px;
+  
 }
 
-.link{
-  color:  black;
-  margin: 10px;
-  border: none;
+.nav-links {
+  display: flex;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.link {
+  margin: 1.5rem;
+  /* border: 1px solid red; */
+  color: #ffffff;
+  font-family: "Product Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+
+
+.info-home {
+  padding: 5%;
+  /* border:1px solid red; */
+  width:80%;
+  text-align: center;
+}
+
+.info-home h3 {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #63708f;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.info-home p {
+  font-family: "Product Sans Light";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.info-home img {
+  width: 90%;
+  max-width:998px;
+}
+
+/* User page */
+
+.container {
   padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  background: #e5e5e5;
 }
 
-.card{
-  width:  300px;
-  height: 400px;
-  margin:  15px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.container h3 {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.19px;
+  line-height: 44px;
+  color: #899bc5;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.25),
+    4px 4px 16px rgba(137, 155, 197, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 360px;
+  text-align: center;
+}
+
+#username {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  color: #516081;
+}
+
+#email {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  color: #301f77;
+}
+
+#add {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  color: #516081;
+}
+
+#num {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  color: #516081;
+}
+
+.card-img {
+  margin: 1.2rem;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.loading{
+  text-align: center;
+  padding: 25%;
+  margin: auto;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Product Sans";
+}
+
+
+/* Error Page */
+
+.error-page {
+  background: #899bc5;
+  width: 100%;
+  height: 782px;
+}
+
+.error-body {
+  display: flex;
+  padding: 10px;
+  /* margin: 15%; */ 
+}
+
+.error-info {
+  padding: 2%;
+}
+
+.error-info h1 {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 200px;
+  line-height: 220px;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.error-info h4 {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 34px;
+  color: #222222;
+  text-align: center;
+}
+
+.error-info p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.error-info button {
+  font-family: "Inter";
+  width: 200px;
+  height: 52px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+  background: #222222;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+.error-image {
+  padding-top: 9%;
+}
+
+.error-img {
+  width: 500px;
+  height: 500px;
+}
+
+/* About Page */
+.about {
+  display: flex;
+  flex-direction:row;
+  margin: auto;
+  /* border:1px solid red; */
+  width: 100%;
+  height: 100vh;
+}
+
+.about-content{
+  display: flex;
+  gap: 48px;
+  width:90%;
+  height: auto;
+   max-width:650px;
+   /* border: 1px solid red; */
+   margin:  100px auto;
+   justify-content: center;
+}
+
+.about-info {
+  width: 50%;
+  /* border: 1px solid black; */
+
+}
+.image{
+  width:50%;
+  height: auto;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+.about-img {
+  /* border: 1px solid red; */
+}
+
+.about-info h2 {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #899bc5;
+}
+
+
+
+.about-info p {
+  font-family: "Product Sans";
+  font-style: normal;
+  font-size: 1rem;
+  text-align: justify;
+  color: #516081;
+}
+
+@media only screen and (max-width: 850px) {
+  .nav-links {
+    padding-left: 10%;
+  }
+.about-content{
+  width: 70%;
+}
+  /* Error page */
+  .error-body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* About page */
+
+  .nav-links {
+    padding-left: 10%;
+  }
+
+  .link{
+    font-size: 1.2rem;
+    margin: 1rem auto;
+  }
+
+  .about-content{
+    width: 65%;
+  }
+
+  .about-info h2{
+    font-size: 1.8rem;
+  }
+
+  .about-info p {
+    font-size: 0.8rem;
+    line-height: 16px;
+  }
+
+
+  /* Error page */
+  .error-body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .about{
+    display: block;
+    border: 1px solid red;
+  }
+
+  .about-content{
+    border: 1px solid red;
+    margin: 0;
+  }
+  .nav{
+    display: flex;
+    flex-direction: row-;
+  }
 }
