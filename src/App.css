@@ -162,62 +162,21 @@ img{
 }
 
 
- 
-@media  (max-width:500px){
-  .info-home h3{
-    /* border: 1px solid red; */
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile{
-    font-size: 1rem;
-  }
-  .info-home p{
-    width:90%;
-    font-size: 1rem ;
-  }
-}
-
-
-
-@media (max-width: 650px) {
-  .info-home h3{
-    /* border: 1px solid red; */
-    font-size: 2.3rem !important;
-  }
-
-  .info-home p{
-    font-size: 1.2rem;
-  }
-
-}
-
-
-@media (max-width: 750px) {
-  .nav{
-    display: none;
-  }
-  .nav-mobile{
-    display: flex;
-  }
-
-  .about-content{
-    flex-direction: column-reverse;
-  }
-
-  .about-info{
-    width: 100%;
-  }
-}
-
-
 /* User page */
-
-.container {
-  padding: 10px;
+.User-Page{
   display: flex;
-  flex-direction: row;
-  background: #e5e5e5;
+  height: 100vh;
+  
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 300px;
+  width: 80%;
+  border: 2px solid red;
+  margin: 50px auto;
+  
 }
 
 .container h3 {
@@ -227,16 +186,15 @@ img{
   font-size: 31.19px;
   line-height: 44px;
   color: #899bc5;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .card {
   background: #ffffff;
   box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.25),
     4px 4px 16px rgba(137, 155, 197, 0.4);
+    width: 100%;
   border-radius: 8px;
-  width: 320px;
-  height: 360px;
   text-align: center;
 }
 
@@ -298,6 +256,58 @@ img{
   font-weight: 600;
   font-family: "Product Sans";
 }
+
+
+
+
+ 
+@media  (max-width:500px){
+  .info-home h3{
+    /* border: 1px solid red; */
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile{
+    font-size: 1rem;
+  }
+  .info-home p{
+    width:90%;
+    font-size: 1rem ;
+  }
+}
+
+
+
+@media (max-width: 650px) {
+  .info-home h3{
+    /* border: 1px solid red; */
+    font-size: 2.3rem !important;
+  }
+
+  .info-home p{
+    font-size: 1.2rem;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+  .nav{
+    display: none;
+  }
+  .nav-mobile{
+    display: flex;
+  }
+
+  .about-content{
+    flex-direction: column-reverse;
+  }
+
+  .about-info{
+    width: 100%;
+  }
+}
+
 
 
 /* Error Page */
