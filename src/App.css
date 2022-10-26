@@ -86,19 +86,46 @@ img{
   height: 100vh;
 }
 
-.about-info{
+.about-content{
   display: flex;
-  gap:60px;
+  flex: 0 1 70%;
+  gap:48px;
   border: 1px solid black;
-  width: 70%;
+  height:auto;
+  max-width: 650px;
   margin: 100px auto;
   justify-content: center;
   max-width: 650px;
 }
 
+.about-info{
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+  
+}
+
+.about-info h2{
+  font-size: 3rem;
+  color: #899bc5;
+  margin-bottom:1.5rem;
+}
+
+.about-info p{
+font-size: 1rem;
+color: #516081;
+text-align: justify;
+}
+
 .about-image{
   width: 50%;
+  height: 55%;
 }
+img{
+  width: 100%;
+}
+
+
 
 /* User page */
 
