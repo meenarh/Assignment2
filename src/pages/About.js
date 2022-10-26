@@ -8,7 +8,7 @@ const About = () => {
       <div className="about">
         <Navbar />
 
-        <div>
+        <div className="about-image">
           <img className="about-img" src={about} alt="About us" />
         </div>
 
