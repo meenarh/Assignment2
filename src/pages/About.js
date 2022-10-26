@@ -1,10 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import about from "../assets/images/image-About.png";
+import NavbarMobile from "../components/NavbarMobile";
 
 const About = () => {
   return (
-    <div>
+    <div className="wrapper">
       <div className="about">
         <Navbar />
 
@@ -21,6 +22,10 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <>
+        <NavbarMobile />
+      </>
     </div>
   );
 };
