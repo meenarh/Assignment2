@@ -29,7 +29,8 @@ body{
 /*Side bar desktop*/
 .nav{
   display: flex;
-  display: none;
+  /* display: none; */
+  height:100vh;
   flex: 0 1 14%;
   justify-content: center;
   /* border: 1px solid red; */
@@ -53,6 +54,7 @@ body{
 /* Sidebar mobile/tablet view */
 .nav-mobile{
   display: flex;
+  display: none;
   justify-content: space-around;
   gap: 3rem;
   padding: 1.5rem;
@@ -66,6 +68,7 @@ body{
   display: flex;
   gap: 4rem;
   margin: auto;
+  font-size: 1.4rem;
 
 }
 .link-mobile{
@@ -146,7 +149,7 @@ img{
 
 .about-info p{
 height:40%;
-/* border: 1px solid red; */
+border: 1px solid red;
 font-size: 1.0rem;
 color: #516081;
 text-align: justify;
@@ -161,9 +164,50 @@ img{
   width: 100%;
 }
 
-@media only screen and (max-width: 750px) {
 
+ 
+@media  (max-width:500px){
+  .info-home h3{
+    border: 1px solid red;
+    font-size: 2rem;
+  }
+
+  .info-home p{
+    width:90%;
+    font-size: 1rem ;
+  }
 }
+
+
+
+@media (max-width: 650px) {
+  .info-home h3{
+    /* border: 1px solid red; */
+    font-size: 2.3rem !important;
+  }
+
+  .info-home p{
+    font-size: 1.2rem;
+  }
+
+  .nav-links-mobile{
+    /* font-size: 0.5rem !important; */
+    border: 1px solid red;
+  }
+}
+
+
+@media (max-width: 750px) {
+  .nav{
+    display: none;
+  }
+  .nav-mobile{
+    display: flex;
+  }
+}
+
+
+
 
 /* User page */
 
@@ -325,14 +369,3 @@ img{
   height: 500px;
 }
 
-@media only screen and (max-width: 768px) {
-  .nav-links {
-    padding-left: 10%;
-  }
-
-  /* Error page */
-  .error-body {
-    display: flex;
-    flex-direction: column;
-  }
-}
