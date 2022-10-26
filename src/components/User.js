@@ -1,6 +1,7 @@
 export const User = ({ user }) => {
-    return (
-      <>
+  return (
+    <div>
+      <div className="card-container">
         <div className="container">
           <div className="card" key={user.id}>
             <div className="card-img">
@@ -21,6 +22,7 @@ export const User = ({ user }) => {
             </div>
           </div>
         </div>
-      </>
-    );
-}
+      </div>
+    </div>
+  );
+};

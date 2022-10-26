@@ -4,6 +4,7 @@ import { getPageNumber } from "../utils/getPageNumber";
 import { User } from "../components/User";
 import { UsersFooter } from "../components/UsersFooter";
 import { useSearchParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function UsersProfile({ users }) {
   return users.map((user) => {
@@ -59,9 +60,12 @@ const Users = () => {
   }
 
   return (
-    <div className="">
+    <div className="User-Page">
+      <Navbar />
+      <div className="card-container">
       <UsersProfile users={getCurrentPageData(pageNumber)} />
       <UsersFooter pageNumber={pageNumber} />
+      </div>
     </div>
   );
 };
