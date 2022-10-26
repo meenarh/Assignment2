@@ -13,17 +13,23 @@ body{
   font-family: 'Product sans', sans-serif;
 }
 
+.wrapper{
+  width:100%;
+  height: 100vh;
+  border: 2px solid red;
+}
+
 /* Home page */
  .home {
   display: flex;
-  /* margin: auto; */
-  border:1px solid red;
-  width: 100%;
-  height: 100vh;
-}
+  /* border:1px solid red; */
+  height: 90%;
 
+}
+/*Side bar desktop*/
 .nav{
   display: flex;
+  display: none;
   flex: 0 1 14%;
   justify-content: center;
   /* border: 1px solid red; */
@@ -43,11 +49,37 @@ body{
   color: #fff;
   /* font-weight: bold; */
 }
+
+/* Sidebar mobile/tablet view */
+.nav-mobile{
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  padding: 1.5rem;
+  /* border: 1px solid red; */
+  height: 10%;
+  background: #899bc5;
+
+}
+
+.nav-links-mobile{
+  display: flex;
+  gap: 4rem;
+  margin: auto;
+
+}
+.link-mobile{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+
 .info-home{
   width:70% ;
   margin:  100px auto;
   text-align: center;
-  border:1px solid red;
+  /* border:1px solid red; */
 }
 
 .info-home h3{
@@ -90,7 +122,7 @@ img{
   display: flex;
   flex: 0 1 70%;
   gap:48px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height:auto;
   max-width: 650px;
   margin: 100px auto;
@@ -100,8 +132,9 @@ img{
 
 .about-info{
   width: 50%;
-  height: 50%;
+  /* height: 50%; */
   flex-direction: column;
+  /* border: 1px solid red; */
   
 }
 
@@ -112,20 +145,25 @@ img{
 }
 
 .about-info p{
-font-size: 1rem;
+height:40%;
+/* border: 1px solid red; */
+font-size: 1.0rem;
 color: #516081;
 text-align: justify;
 }
 
 .about-image{
-  width: 50%;
-  height: 55%;
+  display: flex;
+  flex: 0 1 50%;
+  height: 50%;
 }
 img{
   width: 100%;
 }
 
+@media only screen and (max-width: 750px) {
 
+}
 
 /* User page */
 
