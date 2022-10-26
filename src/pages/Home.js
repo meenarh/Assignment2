@@ -5,7 +5,7 @@ import home from "../assets/images/image-home.png";
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
+      <Navbar  />
         <div className="info-home">
         <h3>Altschool-circle-7 Team</h3>
         <p>
