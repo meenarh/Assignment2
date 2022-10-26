@@ -86,6 +86,19 @@ img{
   height: 100vh;
 }
 
+.about-info{
+  display: flex;
+  gap:60px;
+  border: 1px solid black;
+  width: 70%;
+  margin: 100px auto;
+  justify-content: center;
+  max-width: 650px;
+}
+
+.about-image{
+  width: 50%;
+}
 
 /* User page */
 
