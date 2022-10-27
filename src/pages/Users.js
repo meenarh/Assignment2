@@ -5,6 +5,7 @@ import { User } from "../components/User";
 import { UsersFooter } from "../components/UsersFooter";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import NavbarMobile from '../components/NavbarMobile'
 
 function UsersProfile({ users }) {
   return users.map((user) => {
@@ -20,7 +21,9 @@ const Users = () => {
 
   const getData = async (page) => {
     setIsLoading(true);
-    const { data } = await axios.get(`https://randomuser.me/api/?results=9&page=${page}`);
+    const { data } = await axios.get(
+      `https://randomuser.me/api/?results=7&page=${page}`
+    );
 
     const details = data.results;
     if (page > 1 || details.length > 0) {
@@ -36,15 +39,15 @@ const Users = () => {
       // go to users page if no data
       window.location.href = "/users";
     }
-  
-    if (users.length /9 < pageNumber) {
+
+    if (users.length / 6 < pageNumber) {
       getData(pageNumber);
     }
   }, [pageNumber, users.length]);
 
   const getCurrentPageData = (pageNumber) => {
-    const startIndex = (pageNumber - 1) * 9;
-    const endIndex = startIndex + 9;
+    const startIndex = (pageNumber - 1) * 6;
+    const endIndex = startIndex + 6;
     return users.slice(startIndex, endIndex);
   };
 
@@ -56,16 +59,24 @@ const Users = () => {
   }
 
   if (isLoading) {
-    return <div className="loading">Please wait, your request is being processed....</div>;
+    return (
+      <div className="loading">
+        Please wait, your request is being processed....
+      </div>
+    );
   }
 
   return (
     <div className="User-Page">
       <Navbar />
-      <div className="card-container">
-      <UsersProfile users={getCurrentPageData(pageNumber)} />
-      <UsersFooter pageNumber={pageNumber} />
+      <div className="left">
+        <div className="user-container">
+          <UsersProfile users={getCurrentPageData(pageNumber)} />
+        </div>
+        <UsersFooter pageNumber={pageNumber} />
+      <NavbarMobile />
       </div>
+
     </div>
   );
 };

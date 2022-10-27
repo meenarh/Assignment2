@@ -10,9 +10,9 @@ export const UsersFooter = ({ pageNumber }) => {
     } else {
       return (
         <div className="footer">
-          <button><NavLink to={`/users?page=${pageNumber - 1}`}>Previous</NavLink>
+          <button className="btn"><NavLink to={`/users?page=${pageNumber - 1}`}>Previous</NavLink>
             </button>
-          <button><NavLink to={`/users?page=${pageNumber + 1}`}>Next</NavLink></button>
+          <button className="btn"><NavLink to={`/users?page=${pageNumber + 1}`}>Next</NavLink></button>
 
           
         </div>
