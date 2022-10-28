@@ -18,7 +18,7 @@ const HomePage = () => {
     <div className='hello'>
         <Lottie options={defaultOptions}  />
         <div>
-          <button><NavLink to='/home'>Proceed</NavLink></button>
+          <button><NavLink to='/home'>Go home</NavLink></button>
         </div>
     </div>
   )
