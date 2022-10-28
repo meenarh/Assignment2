@@ -9,16 +9,16 @@ const Navbar = () => {
         <NavLink
           className="link"
           style={({ isActive }) => ({
-            color: isActive ? "#301F77" : "",
+            color: isActive ? "#FF3A40" : "",
           })}
-          to="/"
+          to="/home"
         >
           Home
         </NavLink>
 
         <NavLink className="link"
         style={({ isActive }) => ({
-          color: isActive ? "#301F77" : "",
+          color: isActive ? "#FF3A40" : "",
         })}
         to="/about"
         >
@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink
           className="link"
           style={({ isActive }) => ({
-            color: isActive ? "#301F77" : "",
+            color: isActive ? "#FF3A40" : "",
           })}
           to="/users"
         >

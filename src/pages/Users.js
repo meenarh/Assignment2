@@ -6,6 +6,9 @@ import { UsersFooter } from "../components/UsersFooter";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import NavbarMobile from '../components/NavbarMobile'
+import user from '../assets/lottie/card.json'
+import Lottie from 'react-lottie'
+
 
 function UsersProfile({ users }) {
   return users.map((user) => {
@@ -14,6 +17,18 @@ function UsersProfile({ users }) {
 }
 
 const Users = () => {
+
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: user,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [params] = useSearchParams();
@@ -70,6 +85,7 @@ const Users = () => {
     <div className="User-Page">
       <Navbar />
       <div className="left">
+      <Lottie options={defaultOptions}  width={400} height={400} />
         <div className="user-container">
           <UsersProfile users={getCurrentPageData(pageNumber)} />
         </div>

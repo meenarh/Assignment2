@@ -1,22 +1,31 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import home from "../assets/images/image-home.png";
 import NavbarMobile from "../components/NavbarMobile";
+import home from '../assets/lottie/home.json'
+import Lottie from "react-lottie";
 
 const Home = () => {
+
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: home,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div className="wrapper">
       <div className="home">
         <Navbar />
         <div className="info-home">
-          <h3>Altschool-circle-7 Team</h3>
+        <Lottie options={defaultOptions} width={350} height={350}  />
+          <h4>Altschool Frontend  Assignment 2 </h4>
           <p>
-            We are a proactive team of developers who love creating brand and
-            digital experience that matters
+          &apos; Creativity is a habit, and the best creativity is the result of good work habits&apos;. - Twyla Tharp
           </p>
-          <div className="home-img">
-            <img src={home} alt="home" />
-          </div>
         </div>
       </div>
 
