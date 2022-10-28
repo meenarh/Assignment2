@@ -1,18 +1,15 @@
-import { NavLink } from "react-router-dom";
-
-export const UsersFooter = ({ pageNumber }) => {
+export const UsersFooter = ({ pageNumber, onClickNextPage, onClickPreviousPage }) => {
     if (pageNumber === 1) {
       return (
         <div className="footer">
-          <button className="nxt-btn"><NavLink to={`/users?page=${pageNumber + 1}`}>Next</NavLink></button>
+          <button className="nxt-btn" onClick={onClickNextPage}>Next</button>
         </div>
       );
     } else {
       return (
         <div className="footer">
-          <button className="prev-btn"><NavLink to={`/users?page=${pageNumber - 1}`}>Previous</NavLink>
-            </button>
-          <button className="nxt-btn"><NavLink to={`/users?page=${pageNumber + 1}`}>Next</NavLink></button>
+          <button className="prev-btn" onClick={onClickPreviousPage}>Previous</button>
+          <button className="nxt-btn" onClick={onClickNextPage}>Next</button>
 
           
         </div>
