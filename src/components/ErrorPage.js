@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import error from '../assets/lottie/404.json'
+import not from '../assets/lottie/404.json'
 import Lottie from 'react-lottie'
 
 
@@ -9,7 +9,7 @@ const ErrorPage = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: error,
+    animationData: not,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
