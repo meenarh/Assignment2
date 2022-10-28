@@ -18,7 +18,7 @@ const ErrorPage = () => {
   return (
     <div className="error-page">
           
-        <Lottie options={defaultOptions}  />
+        <Lottie options={defaultOptions} width={400} height={400}  />
 
           <Link to="/home">
             <button className="error-btn">Go back Home</button>

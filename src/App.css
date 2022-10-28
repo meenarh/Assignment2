@@ -349,7 +349,7 @@ a {
 
   .error-btn{
     margin-left: 20%;
-    top: 50%;
+    top: 80%;
   }
 
   .card{
@@ -372,7 +372,7 @@ a {
 
   .error-btn{
     margin-left: 20%;
-    top: 50%;
+    top: 80%;
   }
 }
 
@@ -391,7 +391,7 @@ a {
 
   .error-btn{
     margin-left: 20%;
-    top: 50%;
+    top: 80%;
   }
 }
 
@@ -425,7 +425,7 @@ a {
 /* Error Page */
 .error-btn{
   background: #FFFFFF;
-  color: #1d81de;
+  color: #9B5DE5;
   height: 50px;
   width: 200px;
   border-radius: 10px;
@@ -433,6 +433,7 @@ a {
   font-size: 18px;
   margin: 0;
   position: absolute;
+  top: 80%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
