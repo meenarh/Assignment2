@@ -1,18 +1,10 @@
-export const UsersFooter = ({ pageNumber, onClickNextPage, onClickPreviousPage }) => {
-    if (pageNumber === 1) {
-      return (
-        <div className="footer">
-          <button className="nxt-btn" onClick={onClickNextPage}>Next</button>
-        </div>
-      );
-    } else {
-      return (
-        <div className="footer">
-          <button className="prev-btn" onClick={onClickPreviousPage}>Previous</button>
-          <button className="nxt-btn" onClick={onClickNextPage}>Next</button>
-
-          
-        </div>
-      );
-    }
+export const UsersFooter = ({
+  pageNumber, onClickNextPage, onClickPreviousPage, hasNextPage, hasPreviousPage
+}) => {
+    return (
+      <div className="footer">
+        {hasPreviousPage ? <button className="prev-btn" onClick={onClickPreviousPage}>Previous</button> : null}
+        {hasNextPage ? <button className="nxt-btn" onClick={onClickNextPage}>Next</button> : null}
+      </div>
+    )
 }

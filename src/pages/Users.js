@@ -90,6 +90,8 @@ const Users = () => {
           pageNumber={pageNumber}
           onClickNextPage={onClickNextPage}
           onClickPreviousPage={onClickPreviousPage}
+          hasNextPage={pageNumber < 8}
+          hasPreviousPage={pageNumber > 1}
         />
       <NavbarMobile />
       </div>
