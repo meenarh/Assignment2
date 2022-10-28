@@ -21,7 +21,7 @@ const Home = () => {
       <div className="home">
         <Navbar />
         <div className="info-home">
-        <Lottie options={defaultOptions} width={350} height={350}  />
+        <Lottie options={defaultOptions} width={360} height={360}  />
           <h4>Altschool Frontend  Assignment 2 </h4>
           <p>
           &apos; Creativity is a habit, and the best creativity is the result of good work habits&apos;. - Twyla Tharp
