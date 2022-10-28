@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { getPageNumber } from "../utils/getPageNumber";
 import { User } from "../components/User";
 import { UsersFooter } from "../components/UsersFooter";
-import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import NavbarMobile from '../components/NavbarMobile'
 import user from '../assets/lottie/card.json'
@@ -17,7 +15,9 @@ function UsersProfile({ users }) {
 }
 
 const Users = () => {
-
+  const [pageNumber, setPageNumber] = useState(1);
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const defaultOptions = {
     loop: true,
@@ -27,12 +27,6 @@ const Users = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-
-  const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [params] = useSearchParams();
-  const pageNumber = useMemo(() => getPageNumber(params), [params]);
 
   const getData = async (page) => {
     setIsLoading(true);
@@ -50,15 +44,18 @@ const Users = () => {
   };
 
   useEffect(() => {
-    if (!users.length && pageNumber !== 1) {
-      // go to users page if no data
-      window.location.href = "/users";
-    }
-
     if (users.length / 6 < pageNumber) {
       getData(pageNumber);
     }
   }, [pageNumber, users.length]);
+
+  const onClickNextPage = () => {
+    setPageNumber((prev) => prev + 1);
+  };
+
+  const onClickPreviousPage = () => {
+    setPageNumber((prev) => prev - 1);
+  };
 
   const getCurrentPageData = (pageNumber) => {
     const startIndex = (pageNumber - 1) * 6;
@@ -89,7 +86,11 @@ const Users = () => {
         <div className="user-container">
           <UsersProfile users={getCurrentPageData(pageNumber)} />
         </div>
-        <UsersFooter pageNumber={pageNumber} />
+        <UsersFooter
+          pageNumber={pageNumber}
+          onClickNextPage={onClickNextPage}
+          onClickPreviousPage={onClickPreviousPage}
+        />
       <NavbarMobile />
       </div>
 
